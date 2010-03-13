@@ -23,6 +23,9 @@
 # Python implementation of a basic authentication server as used in q3a based games.
 # This project was started for personal use to test interaction with an existing gameserver
 
+__version__ = '0.1'
+__author__  = 'xlr8or'
+
 import SocketServer
 
 class MyUDPHandler(SocketServer.BaseRequestHandler):
