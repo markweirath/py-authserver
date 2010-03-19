@@ -1,4 +1,3 @@
-#!/usr/bin/python
 # coding=utf-8
 
 # The py-authserver project is Email Ware 
@@ -34,7 +33,7 @@ class MyUDPHandler(SocketServer.BaseRequestHandler):
     def handle(self):
         data = self.request[0].strip()
         socket = self.request[1]
-        data = data.lstrip('ÿ')
+        data = data.lstrip('ï¿½')
         try:
             array = data.split()
             command = array[0]
@@ -43,7 +42,7 @@ class MyUDPHandler(SocketServer.BaseRequestHandler):
                 clientIp = array[2]
                 print "Received: %s" % data
                 #insert voodoo to calculate guid here
-                message = "ÿÿÿÿipAuthorize %s accept KEY_IS_GOOD %s " % serial
+                message = "ï¿½ï¿½ï¿½ï¿½ipAuthorize %s accept KEY_IS_GOOD %s " % serial
                 print "Sent: %s" % message
                 socket.sendto(message, self.client_address)
             elif command == "getKeyAuthorize":
@@ -51,7 +50,7 @@ class MyUDPHandler(SocketServer.BaseRequestHandler):
                 key = array[2]
                 print "Client key: %s" % key
                 #insert voodoo to calculate guid here
-                message = "ÿÿÿÿkeyAuthorize %s accept KEY_IS_GOOD %s " % key
+                message = "ï¿½ï¿½ï¿½ï¿½keyAuthorize %s accept KEY_IS_GOOD %s " % key
                 print "Sent: %s" % message
                 socket.sendto(message, self.client_address)
         except:
